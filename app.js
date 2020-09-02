@@ -1,5 +1,6 @@
 require('dotenv').config();
 require('./configure/db');
+require('./configure/firebase');
 
 const express = require('express');
 const cors = require('cors');
