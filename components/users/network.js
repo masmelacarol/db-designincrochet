@@ -5,8 +5,8 @@ const controller = require('./controller');
 
 router.post('/', async (req, res, next) => {
   try {
-    await controller.createUser(req.body);
-    response.success(req, res, 'Se creo el usuario.', 201);
+    const user = await controller.createUser(req.body);
+    response.success(req, res, user, 201);
   } catch (error) {
     console.log('error', error);
     next();
@@ -15,7 +15,7 @@ router.post('/', async (req, res, next) => {
 
 router.post('/auth', async (req, res, next) => {
   try {
-    const token = await controller.createToken(req.body.email);
+    const token = await controller.createToken(req.body.uid);
     response.success(req, res, token, 201);
   } catch (error) {
     console.log('error', error);
