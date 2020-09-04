@@ -11,6 +11,17 @@ const createUser = async (user) => {
   }
 };
 
+const getAllUsers = async () => {
+  try {
+    const getAll = await store.getAll();
+    return await getAll;
+  } catch (error) {
+    const message = 'Ocurrio un error encontrando los usuarios';
+    console.error('user controller error', error.message);
+    return message;
+  }
+};
+
 const getUserById = async (id) => {
   try {
     const userId = await store.getUserId(id);
@@ -35,6 +46,7 @@ const createToken = async (uid) => {
 
 module.exports = {
   createUser,
+  getAllUsers,
   getUserById,
   createToken,
 };

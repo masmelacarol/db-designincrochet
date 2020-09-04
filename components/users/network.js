@@ -23,6 +23,15 @@ router.post('/auth', async (req, res, next) => {
   }
 });
 
+router.get('/', async (req, res, next) => {
+  try {
+    const users = await controller.getAllUsers();
+    response.success(req, res, users, 200);
+  } catch (error) {
+    next();
+  }
+});
+
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {

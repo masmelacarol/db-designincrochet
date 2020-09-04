@@ -17,8 +17,11 @@ const createUser = async (user) => {
   }
 };
 
+const getAllUsers = () => {
+  return userModel.find({});
+};
+
 const getUserById = async (id) => {
-  // const userRecord = await admin.auth().getUser(uid);
   return userModel.findOne({ id });
 };
 
@@ -33,6 +36,7 @@ const createToken = async (uid) => {
 
 module.exports = {
   create: createUser,
+  getAll: getAllUsers,
   getUserId: getUserById,
   addToken: createToken,
 };
