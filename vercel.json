@@ -1,0 +1,15 @@
+{
+  "name": "desigincrochet-api",
+  "version": 2,
+  "builds": [{
+    "src": "app.js",
+    "use": "@vercel/node"
+  }],
+  "routes": [{
+    "src": "/(.*)",
+    "dest": "/app.js"
+  }],
+  "env": {
+    "MONGO_CONNECTION": "@mongo-connection"
+  }
+}
