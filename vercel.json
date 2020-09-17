@@ -1,14 +1,19 @@
 {
   "name": "desigincrochet-api",
   "version": 2,
-  "builds": [{
-    "src": "app.js",
-    "use": "@vercel/node"
-  }],
-  "routes": [{
-    "src": "/(.*)",
-    "dest": "/app.js"
-  }],
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ],
+  "alias": ["vercel.app", "designincrochet"],
   "env": {
     "MONGO_CONNECTION": "@mongo-connection"
   }

@@ -3,10 +3,8 @@ const html = require('./model');
 
 const mailOptions = async (options) => {
   const { title, mailTo, mailFrom, products, user } = options;
-  console.log('mailOptions -> user', user);
   try {
     const htmlTemplate = await html.getHtml(products, user);
-    console.log('mailOptions -> htmlTemplate', htmlTemplate);
     const options = await store.options(title, mailTo, mailFrom, htmlTemplate);
     return await options;
   } catch (error) {

@@ -1,7 +1,6 @@
 const store = require('./store');
 
 const createComment = async (idUser, idProduct, comment, rating) => {
-  console.log('createComment -> idUser', idUser);
   try {
     const commentStore = await store.create(idUser, idProduct, comment, rating);
     return await commentStore;

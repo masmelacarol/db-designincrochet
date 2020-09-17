@@ -22,14 +22,14 @@ const sendMail = async (mailOptions) => {
   try {
     const mailTransporter = await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return console.log(error.message);
+        return console.error(error.message);
       }
       console.log('Email sent: ' + info.response);
       return info.message;
     });
     return mailTransporter;
   } catch (error) {
-    return console.log(error.message);
+    return console.error(error.message);
   }
 };
 

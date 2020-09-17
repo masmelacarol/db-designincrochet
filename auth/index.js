@@ -29,12 +29,9 @@ const check = {
   own: (req, owner) => {
     const decoded = decodeHeader(req);
     if (decoded.id !== owner) throw error('No puedes hacer esto', 401);
-    console.log('decoded', decoded);
   },
   logged: (req) => {
     const decoded = decodeHeader(req);
-    // if (decoded.id !== owner) throw error('No puedes hacer esto', 401);
-    console.log('decoded', decoded);
   },
 };
 

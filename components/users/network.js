@@ -8,7 +8,6 @@ router.post('/', async (req, res, next) => {
     const user = await controller.createUser(req.body);
     response.success(req, res, user, 201);
   } catch (error) {
-    console.log('error', error);
     next();
   }
 });
@@ -18,7 +17,6 @@ router.post('/auth', async (req, res, next) => {
     const token = await controller.createToken(req.body.uid);
     response.success(req, res, token, 201);
   } catch (error) {
-    console.log('error', error);
     next();
   }
 });

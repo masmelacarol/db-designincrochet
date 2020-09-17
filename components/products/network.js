@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
     const getProducts = await controller.getAllProducts();
     response.success(req, res, getProducts, 200);
   } catch (error) {
-    console.log('error', error);
     next();
   }
 });

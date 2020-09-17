@@ -2,7 +2,6 @@ let admin = require('firebase-admin');
 const userModel = require('./model');
 
 const createUser = async (user) => {
-  console.log('createUser -> user', user);
   try {
     let userRecord = await admin.auth().createUser(user);
     const userData = {
@@ -13,7 +12,7 @@ const createUser = async (user) => {
     const newProduct = new userModel(userData);
     return newProduct.save();
   } catch (error) {
-    console.log('createUser -> error creating new user', error.message);
+    console.error('createUser -> error creating new user', error.message);
   }
 };
 
@@ -30,7 +29,7 @@ const createToken = async (uid) => {
     let token = await admin.auth().createCustomToken(uid);
     return token;
   } catch (error) {
-    console.log('getToken -> error creating new user', error.message);
+    console.error('getToken -> error creating new user', error.message);
   }
 };
 
