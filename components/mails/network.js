@@ -6,8 +6,8 @@ const response = require('../../network/response');
 router.post('/send', async (req, res, next) => {
   try {
     const options = await controller.mailOptions(req.body);
-    const sendMail = await controller.sendMail(options);
-    response.success(req, res, sendMail, 201);
+    await controller.sendMail(options);
+    response.success(req, res, `Mensaje enviado a ${req.body.mailTo}`, 201);
   } catch (error) {
     next();
   }

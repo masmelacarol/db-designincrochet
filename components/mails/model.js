@@ -1,5 +1,5 @@
 const URL = 'http://localhost:4200/home';
-const getHtml = (products, user) => {
+const getHtml = (products, user, total) => {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -113,6 +113,7 @@ const getHtml = (products, user) => {
           }
     
           tbody {
+            text-align: center;
             border-bottom: 0.5px solid #c4c4c4;
           }
           tbody td {
@@ -120,6 +121,10 @@ const getHtml = (products, user) => {
           }
           tbody td:last-child {
             border-right: 0.5px solid #c4c4c4;
+          }
+
+          table tbody tr:nth-of-type(2n) {
+            display:none !important;           
           }
           tbody td .count {
             background: #e7e7ec;
@@ -174,6 +179,19 @@ const getHtml = (products, user) => {
           figure {
             margin: auto;
           }
+
+          .total {
+            margin: 10px;
+            display:flex;
+            justify-content: flex-end; 
+            align-items: center;
+            flex-wrap: wrap;
+          }
+          .total p {
+            margin-left: 10px;
+          }
+
+          
           @media only screen and (max-width: 768px) {
             table,
             thead,
@@ -323,6 +341,10 @@ const getHtml = (products, user) => {
               })}
             </tbody>
           </table>
+          <div class="total">
+              <h6>Total: </h6>
+              <p>$${total}</p>
+          </div>
         </main>
       </body>
     </html>
