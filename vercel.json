@@ -9,6 +9,16 @@
     "dest": "/app.js"
   }],
   "env": {
-    "MONGO_CONNECTION": "@mongo-connection"
+    "MONGO_CONNECTION": "@mongo-connection",
+    "TYPE": "@fb-type",
+    "PROJECTID": "@fb-project-id",
+    "PRIVATEKEYID": "@fb-private-key-id",
+    "PRIVATEKEY": "@fb-private-key",
+    "CLIENTEMAIL": "@fb-client-email",
+    "CLIENTID": "@fb-client-id",
+    "AUTHURI": "@fb-token-uri",
+    "TOKENURI": "@fb-auth-uri",
+    "AUTHPROVIDERX509CERTURL": "@fb-auth-provider",
+    "CLIENTX509CERTURL": "@fb-client-cert"
   }
 }

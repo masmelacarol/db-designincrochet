@@ -1,6 +1,6 @@
 let admin = require('firebase-admin');
 
-let serviceAccount = require('../crochet-auth-firebase.json');
+let serviceAccount = require('./auth');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
